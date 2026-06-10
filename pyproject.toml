@@ -1,0 +1,27 @@
+[project]
+name = "drug-interaction-agent"
+version = "0.1.0"
+description = "Drug Interaction Agent with Phoenix tracing for the Arize / Google Cloud hackathon track"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "openinference-instrumentation-google-genai>=0.1.0",
+    "google-adk>=1.32.0",
+    "google-genai>=1.9.0",
+    "python-dotenv>=1.0.1",
+    "opentelemetry-sdk>=1.27.0",
+    "opentelemetry-exporter-otlp-proto-http>=1.27.0",
+    "arize-phoenix>=15.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.13.3",
+    "tenacity>=9.1.4",
+    "streamlit>=1.44.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["agent/drug_interaction_agent"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
